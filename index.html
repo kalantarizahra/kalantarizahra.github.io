@@ -78,7 +78,10 @@ content="Academic website of Zahra Kalantari, Socio-Economic Systems Researcher 
 
 
 
-       <nav class="main-nav" aria-label="Main navigation">
+       <nav
+    class="main-nav"
+    id="main-nav"
+    aria-label="Main navigation">
   <a href="research.html">Research</a>
   <a href="publications.html">Publications</a>
   <a href="teaching.html">Teaching</a>
@@ -86,7 +89,7 @@ content="Academic website of Zahra Kalantari, Socio-Economic Systems Researcher 
   <a href="about.html">About</a>
 </nav>
 
-
+ 
 
         <!-- SOCIAL LINKS -->
 
@@ -152,9 +155,18 @@ content="Academic website of Zahra Kalantari, Socio-Economic Systems Researcher 
 
 
         </div>
+      
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-controls="main-nav"
+            aria-expanded="false">
+            ☰
+        </button>
 
 
-    </header>
+       </header>
 
 
 
@@ -391,7 +403,25 @@ content="Academic website of Zahra Kalantari, Socio-Economic Systems Researcher 
 
 
 </div>
+<script>
 
+const menuButton = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".main-nav");
+
+menuButton.addEventListener("click", () => {
+
+    const isOpen = nav.classList.toggle("open");
+
+    menuButton.setAttribute(
+        "aria-expanded",
+        isOpen
+    );
+
+    menuButton.textContent = isOpen ? "×" : "☰";
+
+});
+
+</script>
 
 </body>
 
