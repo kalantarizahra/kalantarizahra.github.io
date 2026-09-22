@@ -675,7 +675,7 @@ img {
 
   :root {
     --featured-height: 52px;
-    --rail-width: 52px;
+    --rail-width: 32px;
   }
 
   .page-shell {
@@ -686,13 +686,13 @@ img {
   }
 
   .left-rail {
-    position: absolute;
-    top: 0;
-    bottom: var(--featured-height);
-    height: auto;
-    width: 32px;
-    background-size: cover;
-  }
+  position: absolute;
+  top: 0;
+  bottom: var(--featured-height);
+  height: auto;
+  width: var(--rail-width);
+  background-size: cover;
+}
 
   .site-header {
     height: 68px;
@@ -710,21 +710,35 @@ img {
     letter-spacing: 0.12em;
   }
 
- .main-nav.open {
-    display:flex;
-    position:absolute;
-    top:68px;
-    right:20px;
-    flex-direction:column;
-    background:var(--page);
-    padding:20px;
-    gap:18px;
+   .main-nav {
+  display: none;
 }
 
-  .menu-toggle {
-    display: block;
-    margin-left: 14px;
-  }
+.main-nav.open {
+  display: flex;
+  position: absolute;
+  top: 68px;
+  right: 16px;
+  z-index: 100;
+
+  width: auto;
+  height: auto;
+
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+
+  padding: 20px 24px;
+
+  background: var(--page);
+  box-shadow: 0 10px 30px rgba(23, 63, 96, 0.12);
+}
+
+.menu-toggle {
+  display: block;
+  margin-left: 14px;
+  padding: 0;
+}
   .social-links {
     margin-left: auto;
   }
