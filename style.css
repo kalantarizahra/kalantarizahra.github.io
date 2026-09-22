@@ -166,7 +166,14 @@ img {
 .main-nav a.active::after {
   width: 30px;
 }
-
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--deep-blue);
+    font-size: 26px;
+    cursor: pointer;
+}
 /* ===================== SOCIAL ===================== */
 
 .social-links {
@@ -683,7 +690,7 @@ img {
     top: 0;
     bottom: var(--featured-height);
     height: auto;
-    width: var(--rail-width);
+    width: 32px;
     background-size: cover;
   }
 
@@ -703,10 +710,21 @@ img {
     letter-spacing: 0.12em;
   }
 
-  .main-nav {
-    display: none;
-  }
+ .main-nav.open {
+    display:flex;
+    position:absolute;
+    top:68px;
+    right:20px;
+    flex-direction:column;
+    background:var(--page);
+    padding:20px;
+    gap:18px;
+}
 
+  .menu-toggle {
+    display: block;
+    margin-left: 14px;
+  }
   .social-links {
     margin-left: auto;
   }
@@ -728,7 +746,7 @@ img {
   }
 
   .hero h1 {
-    font-size: clamp(46px, 14vw, 50px);
+    font-size: clamp(40px, 14vw, 50px);
   }
 
   .hero-visual {
